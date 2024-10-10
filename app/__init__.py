@@ -1,3 +1,4 @@
+from app.commands.menu import MenuCommand
 from app.commands.exit import ExitCommand
 from app.commands.add import AddCommand
 from app.commands.subtract import SubtractCommand
@@ -11,6 +12,7 @@ class App:
 
 
     def start(self):
+        self.command_handler.register_command("menu", MenuCommand())
         self.command_handler.register_command("exit", ExitCommand())
         self.command_handler.register_command("add", AddCommand())
         self.command_handler.register_command("subtract", SubtractCommand())
