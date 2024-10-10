@@ -1,4 +1,6 @@
-import pytest
+'''
+Unit tests for the App class's REPL (Read-Eval-Print Loop) behavior.
+'''
 from app import App
 
 def test_app_start_exit_command(capfd, monkeypatch):
