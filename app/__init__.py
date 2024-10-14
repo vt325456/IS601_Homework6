@@ -24,5 +24,6 @@ class App:
         print("Type 'menu' to show menu.")
         print("Type 'exit' to exit.")
         while True:
+
             self.command_handler.execute_command(input(">>> ").strip())
 

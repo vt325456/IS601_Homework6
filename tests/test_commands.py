@@ -9,6 +9,7 @@ from app.plugins.multiply import MultiplyCommand
 from app.plugins.divide import DivideCommand
 
 
+
 def test_add_command(capfd, monkeypatch):
     """Verifies the addition command correctly adds two numbers and displays result."""
     inputs = iter(['2', '2'])

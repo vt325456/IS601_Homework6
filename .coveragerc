@@ -5,3 +5,7 @@ omit =
     tests/__init__.py
     app/commands/__init__.py 
     /usr/lib/python3/dist-packages/six.py
+
+[coverage:report]
+exclude_lines =
+    @abstractmethod
