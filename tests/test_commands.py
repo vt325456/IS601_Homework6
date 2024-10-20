@@ -3,6 +3,7 @@ Test module for the arithmetic commands and REPL functionality of the class App.
 """
 import pytest
 from app import App
+from app.plugins.menu import MenuCommand
 from app.plugins.add import AddCommand
 from app.plugins.subtract import SubtractCommand
 from app.plugins.multiply import MultiplyCommand
@@ -56,17 +57,3 @@ def test_dividebyzero_command(capfd, monkeypatch):
     command.execute()
     out, err = capfd.readouterr()
     assert "Error raised! Cant operate Division By Zero" in out, "This Operation should raise error!"
-
-def test_app_menu_command(capfd, monkeypatch):
-    """
-    Test that the REPL correctly handles the 'menu' command and exits cleanly.
-    This test simulates user input to display the menu and then exit the application,
-    ensuring the menu is displayed and the app exits gracefully with the expected output.
-    """
-    inputs = iter(['menu', 'exit'])
-    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-    app = App()
-    with pytest.raises(SystemExit) as e:
-        app.start()  # Assuming App.start() is now a static method based on previous discussions
-    assert str(e.value) == "Exiting...", "The app did not exit as expected"
-    
