@@ -1,9 +1,6 @@
 """ 
 Test module for the arithmetic commands and REPL functionality of the class App.
 """
-import pytest
-from app import App
-from app.plugins.menu import MenuCommand
 from app.plugins.add import AddCommand
 from app.plugins.subtract import SubtractCommand
 from app.plugins.multiply import MultiplyCommand
